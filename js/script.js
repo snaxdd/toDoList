@@ -14,7 +14,11 @@ const addToStorage = function(obj) {
 const readStorage = function() {
     const returnObj = JSON.parse(localStorage.getItem("list"));
 
-    return returnObj;
+    if (returnObj !== null) {
+        return returnObj;
+    } else {
+        return [];
+    }
 };
 
 const todoData = readStorage();
@@ -69,7 +73,7 @@ todoControl.addEventListener("submit", function(event) {
         headerInput.value = "";
         addToStorage(todoData);
     }
-
+    
     render();
 });
 
