@@ -26,7 +26,8 @@ const todoData = readStorage();
 const render = function() {
     todoList.textContent = "";
     todoCompleted.textContent = "";
-
+    addToStorage(todoData);
+    
     todoData.forEach(function(item) {
         const li = document.createElement("li");
         li.classList.add("todo-item");
@@ -48,13 +49,11 @@ const render = function() {
 
         complete.addEventListener("click", function() {
             item.completed = !item.completed;
-            addToStorage(todoData);
             render();
         });
         
         remove.addEventListener("click", function() {
             todoData.splice(todoData.indexOf(item), 1);
-            addToStorage(todoData);
             render();
         });
     });
