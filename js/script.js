@@ -27,7 +27,7 @@ const render = function() {
     todoList.textContent = "";
     todoCompleted.textContent = "";
     addToStorage(todoData);
-    
+
     todoData.forEach(function(item) {
         const li = document.createElement("li");
         li.classList.add("todo-item");
@@ -69,8 +69,7 @@ todoControl.addEventListener("submit", function(event) {
 
     if (newTodo.value.trim() !== "") {
         todoData.push(newTodo);
-        headerInput.value = "";
-        addToStorage(todoData);
+        headerInput.value = "";    
     }
     
     render();
