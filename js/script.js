@@ -57,10 +57,10 @@ class Todo {
             
             if (this.header.classList.contains("header-error")) {
                 this.header.classList.remove("header-error");
+                this.header.classList.add("header-default");
                 this.input.placeholder = "Какие планы?";
             }
-            
-            this.header.classList.add("header-default");
+
             this.render();
             this.input.value = "";
         } else if (this.input.value.trim() === "") {
